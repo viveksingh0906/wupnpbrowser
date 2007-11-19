@@ -1,4 +1,5 @@
 #summary First runnable version of the application (including source in SVN) uploaded
+#labels Featured
 
 = Alpha Code and Binaries available =
 
