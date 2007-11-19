@@ -11,3 +11,5 @@ A first basic version of the app is now available as binary installers and as a 
   * Displays details of the device selected in the tree view control
 
 The next step would be to complete the detailed device information tab and add some more graphics to the UI to make it more complete.
+
+This release has only been tested on my developer box (32bit Win XP) so there might be pieces missing in the installer for a "clean" machine. It is built using Visual Studio 2005 on .Net 2.0.
