@@ -73,6 +73,7 @@ namespace UPnP_Browser
             this.treeDevices = new System.Windows.Forms.TreeView();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDevice = new System.Windows.Forms.TabPage();
+            this.pictureBoxDevice = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtType = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,7 +87,9 @@ namespace UPnP_Browser
             this.tabPageDocument = new System.Windows.Forms.TabPage();
             this.webBrowserDocument = new System.Windows.Forms.WebBrowser();
             this.tabPageServices = new System.Windows.Forms.TabPage();
-            this.pictureBoxDevice = new System.Windows.Forms.PictureBox();
+            this.listViewServices = new System.Windows.Forms.ListView();
+            this.columnHeaderServiceId = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderServiceType = new System.Windows.Forms.ColumnHeader();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -94,8 +97,9 @@ namespace UPnP_Browser
             this.splitContainer1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageDevice.SuspendLayout();
-            this.tabPageDocument.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDevice)).BeginInit();
+            this.tabPageDocument.SuspendLayout();
+            this.tabPageServices.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -121,7 +125,7 @@ namespace UPnP_Browser
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -140,7 +144,7 @@ namespace UPnP_Browser
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -149,7 +153,7 @@ namespace UPnP_Browser
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // helpToolStripMenuItem
@@ -163,7 +167,7 @@ namespace UPnP_Browser
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -266,6 +270,14 @@ namespace UPnP_Browser
             this.tabPageDevice.TabIndex = 0;
             this.tabPageDevice.Text = "Device";
             this.tabPageDevice.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxDevice
+            // 
+            this.pictureBoxDevice.Location = new System.Drawing.Point(182, 170);
+            this.pictureBoxDevice.Name = "pictureBoxDevice";
+            this.pictureBoxDevice.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxDevice.TabIndex = 17;
+            this.pictureBoxDevice.TabStop = false;
             // 
             // label5
             // 
@@ -376,6 +388,7 @@ namespace UPnP_Browser
             // 
             // tabPageServices
             // 
+            this.tabPageServices.Controls.Add(this.listViewServices);
             this.tabPageServices.Location = new System.Drawing.Point(4, 22);
             this.tabPageServices.Name = "tabPageServices";
             this.tabPageServices.Padding = new System.Windows.Forms.Padding(3);
@@ -384,13 +397,28 @@ namespace UPnP_Browser
             this.tabPageServices.Text = "Services";
             this.tabPageServices.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxDevice
+            // listViewServices
             // 
-            this.pictureBoxDevice.Location = new System.Drawing.Point(182, 170);
-            this.pictureBoxDevice.Name = "pictureBoxDevice";
-            this.pictureBoxDevice.Size = new System.Drawing.Size(150, 150);
-            this.pictureBoxDevice.TabIndex = 17;
-            this.pictureBoxDevice.TabStop = false;
+            this.listViewServices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderServiceId,
+            this.columnHeaderServiceType});
+            this.listViewServices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewServices.Location = new System.Drawing.Point(3, 3);
+            this.listViewServices.MultiSelect = false;
+            this.listViewServices.Name = "listViewServices";
+            this.listViewServices.ShowGroups = false;
+            this.listViewServices.Size = new System.Drawing.Size(334, 320);
+            this.listViewServices.TabIndex = 0;
+            this.listViewServices.UseCompatibleStateImageBehavior = false;
+            this.listViewServices.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderServiceId
+            // 
+            this.columnHeaderServiceId.Text = "Service ID";
+            // 
+            // columnHeaderServiceType
+            // 
+            this.columnHeaderServiceType.Text = "Service Type";
             // 
             // frmMainWindow
             // 
@@ -401,6 +429,7 @@ namespace UPnP_Browser
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainWindow";
             this.Text = "UPnP Browser";
             this.Load += new System.EventHandler(this.frmMainWindow_Load);
@@ -414,8 +443,9 @@ namespace UPnP_Browser
             this.tabControl.ResumeLayout(false);
             this.tabPageDevice.ResumeLayout(false);
             this.tabPageDevice.PerformLayout();
-            this.tabPageDocument.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDevice)).EndInit();
+            this.tabPageDocument.ResumeLayout(false);
+            this.tabPageServices.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,6 +483,9 @@ namespace UPnP_Browser
         private System.Windows.Forms.TabPage tabPageDocument;
         private System.Windows.Forms.WebBrowser webBrowserDocument;
         private System.Windows.Forms.PictureBox pictureBoxDevice;
+        private System.Windows.Forms.ListView listViewServices;
+        private System.Windows.Forms.ColumnHeader columnHeaderServiceId;
+        private System.Windows.Forms.ColumnHeader columnHeaderServiceType;
 
     }
 }
