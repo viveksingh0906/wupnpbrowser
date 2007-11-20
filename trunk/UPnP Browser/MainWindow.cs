@@ -96,6 +96,10 @@ namespace UPnP_Browser
 
             if (device != null)
             {
+                //
+                // Populate the Device tab
+                //
+                
                 txtFriendlyName.Text = device.FriendlyName;
                 txtUniqueDeviceName.Text = device.UniqueDeviceName;
                 txtDescription.Text = device.Description;
@@ -112,7 +116,35 @@ namespace UPnP_Browser
                 else
                     pictureBoxDevice.Visible = false;
                 
+                //
+                // Populate the Services tab
+                //
 
+                listViewServices.Items.Clear();
+                
+                UPnPServices services = device.Services;
+
+                if (services != null)
+                {
+                    foreach (UPnPService service in services)
+                    {
+                        ListViewItem item = new ListViewItem();
+
+                        item.Text = service.Id;
+                        item.Tag = service.Id;
+                        item.SubItems.Add(service.ServiceTypeIdentifier);
+
+                        listViewServices.Items.Add(item);
+                    }
+                }
+                
+
+                //
+                // Populate the document tab
+                //
+
+                webBrowserDocument.Url = new Uri(((IUPnPDeviceDocumentAccess)device).GetDocumentURL());
+                
                 tabControl.Visible = true;
             }
 

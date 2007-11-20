@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0D253A47AAC28DA753C299C2FC0876EA"
+        "OwnerKey" = "8:_B9F32655C4B84921B7F8E025E777A7F4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B9F32655C4B84921B7F8E025E777A7F4"
+        "OwnerKey" = "8:_0D253A47AAC28DA753C299C2FC0876EA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -67,6 +67,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -83,6 +94,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
     }
     "Deployable"
@@ -238,14 +260,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Windows UPnP Browser"
-        "ProductCode" = "8:{7539CD83-339B-4F99-881F-11098C039830}"
-        "PackageCode" = "8:{A673EB0D-A863-41F3-B7AA-CFF2198BD95B}"
+        "ProductCode" = "8:{FB3225C3-9466-4DF5-8473-3B1E6DAE5A0D}"
+        "PackageCode" = "8:{D5977F7C-1D8D-4850-843F-666DDD331D12}"
         "UpgradeCode" = "8:{FC659AAB-75AF-4728-83A2-3A00F9A1C40C}"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.1.0"
+        "ProductVersion" = "8:0.1.01"
         "Manufacturer" = "8:Jonas Andreasson"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
